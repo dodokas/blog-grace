@@ -103,11 +103,161 @@
   </section>
 
   <!-- FOOTER -->
-  <footer>
-    <div class="footer-logo">Les Plumes Divines</div>
+  <!-- MODALS LÉGAUX -->
+  <div class="modal-overlay" id="modal-mentions" onclick="fermerModal('modal-mentions')">
+    <div class="modal-boite" onclick="event.stopPropagation()">
+      <div class="modal-header">
+        <h2>Mentions légales</h2>
+        <button class="modal-fermer" onclick="fermerModal('modal-mentions')">✕</button>
+      </div>
+      <div class="modal-corps">
 
-    <p class="footer-copy">© 2026 · Grace 🤍 · Tous droits réservés</p>
+        <div class="modal-section">
+          <h3>Éditeur du site</h3>
+          <p>Ce site est édité par <strong>Dorcas Mordiva Nzuzi</strong> pour le blog personnel de Grace, à titre non commercial.</p>
+          <p><strong>Contact :</strong> dorcasmordiva@gmail.com</p>
+          <p class="modal-note">Conformément à l'article 6 de la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique (LCEN).</p>
+        </div>
+
+        <div class="modal-section">
+          <h3>Hébergement</h3>
+          <p><strong>Netlify, Inc.</strong><br>
+          44 Montgomery Street, Suite 300<br>
+          San Francisco, CA 94104 – États-Unis<br>
+          www.netlify.com</p>
+        </div>
+
+        <div class="modal-section">
+          <h3>Propriété intellectuelle</h3>
+          <p>L'ensemble du contenu de ce site — textes, poèmes, histoires, articles — est la propriété exclusive de Grace et est protégé par le droit d'auteur français et international.</p>
+          <p>Toute reproduction, représentation ou adaptation sans autorisation écrite préalable est interdite et constitue une contrefaçon au sens de l'article L.335-2 du Code de la Propriété Intellectuelle.</p>
+        </div>
+
+        <div class="modal-section">
+          <h3>Cookies</h3>
+          <p>Ce site ne dépose aucun cookie publicitaire ou traceur à des fins commerciales. Aucune donnée personnelle n'est collectée via des cookies dans l'état actuel du site.</p>
+        </div>
+
+        <div class="modal-section">
+          <h3>Limitation de responsabilité</h3>
+          <p>Les informations publiées sur ce site sont données à titre informatif. L'éditeur se réserve le droit de modifier ou supprimer tout contenu à tout moment et sans préavis. La responsabilité de l'éditeur ne saurait être engagée en cas d'erreur ou d'omission dans les contenus publiés.</p>
+        </div>
+
+        <div class="modal-section">
+          <h3>Droit applicable</h3>
+          <p>Ce site et ses mentions légales sont soumis au droit français. En cas de litige, les tribunaux français seront seuls compétents.</p>
+        </div>
+
+      </div>
+      <div class="modal-date">Dernière mise à jour : mai 2026</div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-confidentialite" onclick="fermerModal('modal-confidentialite')">
+    <div class="modal-boite" onclick="event.stopPropagation()">
+      <div class="modal-header">
+        <h2>Politique de confidentialité</h2>
+        <button class="modal-fermer" onclick="fermerModal('modal-confidentialite')">✕</button>
+      </div>
+      <div class="modal-corps">
+
+        <div class="modal-section">
+          <h3>Responsable du traitement</h3>
+          <p><strong>Dorcas Mordiva Nzuzi</strong> — gestionnaire du site Les Plumes Divines.</p>
+          <p><strong>Contact :</strong> dorcasmordiva@gmail.com</p>
+          <p class="modal-note">Conformément au Règlement Général sur la Protection des Données (RGPD — Règlement UE 2016/679).</p>
+        </div>
+
+        <div class="modal-section">
+          <h3>Données collectées</h3>
+          <p>Ce site est un blog personnel statique. <strong>Aucune donnée personnelle n'est collectée</strong> directement via le site dans son état actuel.</p>
+          <p>Si un formulaire de contact est ajouté à l'avenir, les données saisies (nom, adresse e-mail, message) seront utilisées uniquement pour répondre à votre demande. Elles ne seront jamais vendues, partagées ou transmises à des tiers.</p>
+        </div>
+
+        <div class="modal-section">
+          <h3>Données de navigation</h3>
+          <p>Des données techniques anonymes peuvent être collectées automatiquement par Netlify (hébergeur) à des fins de sécurité et de maintenance. Ces données ne permettent pas d'identifier personnellement un visiteur.</p>
+        </div>
+
+        <div class="modal-section">
+          <h3>Cookies</h3>
+          <p>Ce site n'utilise pas de cookies publicitaires ni de systèmes de suivi (tracking). Si des outils d'analyse (ex : Google Analytics) sont intégrés à l'avenir, un bandeau de consentement sera mis en place conformément aux recommandations de la CNIL.</p>
+        </div>
+
+        <div class="modal-section">
+          <h3>Vos droits</h3>
+          <p>Conformément au RGPD, vous disposez des droits suivants :</p>
+          <p>— Droit d'accès à vos données personnelles<br>
+          — Droit de rectification<br>
+          — Droit à l'effacement (droit à l'oubli)<br>
+          — Droit à la limitation du traitement<br>
+          — Droit à la portabilité des données<br>
+          — Droit d'opposition</p>
+          <p>Pour exercer ces droits, contactez : <strong>dorcasmordiva@gmail.com</strong></p>
+          <p>Vous pouvez également introduire une réclamation auprès de la CNIL (Commission Nationale de l'Informatique et des Libertés) : www.cnil.fr</p>
+        </div>
+
+        <div class="modal-section">
+          <h3>Durée de conservation</h3>
+          <p>Les données éventuellement collectées via un formulaire de contact seront conservées pour la durée strictement nécessaire à la gestion de votre demande, et supprimées ensuite.</p>
+        </div>
+
+      </div>
+      <div class="modal-date">Dernière mise à jour : mai 2026</div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+
+      <div class="footer-logo-bloc">
+        <div class="footer-logo">Les Plumes Divines</div>
+        <p class="footer-tagline">Écriture · Lifestyle · Sport · Foi</p>
+        
+      </div>
+
+      <nav class="footer-nav">
+        <div class="footer-nav-col">
+          <p class="footer-nav-titre">Navigation</p>
+          <a href="index.html">Accueil</a>
+          <a href="a-propos.html">À propos</a>
+          <a href="ecriture.html">Écriture</a>
+          <a href="lifestyle.html">Lifestyle</a>
+          <a href="sport.html">Sport</a>
+          <a href="foi.html">Foi & témoignage</a>
+        </div>
+        <div class="footer-nav-col">
+          <p class="footer-nav-titre">Légal</p>
+          <button class="footer-btn-legal" onclick="ouvrirModal('modal-mentions')">Mentions légales</button>
+          <button class="footer-btn-legal" onclick="ouvrirModal('modal-confidentialite')">Politique de confidentialité</button>
+          <button class="footer-btn-legal" onclick="ouvrirModal('modal-mentions')">Cookies</button>
+        </div>
+      </nav>
+
+    </div>
+
+    <div class="footer-bas">
+      <p class="footer-copy">© 2026 Les Plumes Divines · Grace 🤍 · Tous droits réservés</p>
+    </div>
   </footer>
+
+  <script>
+    function ouvrirModal(id) {
+      document.getElementById(id).classList.add('modal-actif');
+      document.body.style.overflow = 'hidden';
+    }
+    function fermerModal(id) {
+      document.getElementById(id).classList.remove('modal-actif');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        document.querySelectorAll('.modal-overlay').forEach(m => m.classList.remove('modal-actif'));
+        document.body.style.overflow = '';
+      }
+    });
+  </script>
 
 </body>
 </html>
