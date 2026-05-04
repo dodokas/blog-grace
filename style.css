@@ -541,9 +541,9 @@ footer div.footer-nav {
 .footer-inner {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: flex-start;
-  gap: 2rem;
+  gap: 5rem;
   max-width: 960px;
   margin: 0 auto;
   padding-bottom: 3rem;
@@ -799,12 +799,19 @@ footer div.footer-nav {
 
 @media (max-width: 680px) {
   .footer-inner {
-    grid-template-columns: 1fr;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2.5rem;
+    justify-content: flex-start;
+  }
+  .footer-nav {
+    flex-direction: column;
     gap: 2rem;
+    width: 100%;
   }
   .footer-bas {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: 0.4rem;
   }
   .modal-corps { padding: 1.5rem; }
