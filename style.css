@@ -1,0 +1,676 @@
+/* ============================================
+   LES PLUMES DIVINES — style.css
+   Police : Cormorant Garamond (texte littéraire)
+             Jost (navigation / labels)
+   Palette : roses poudré, crème, vert sauge doux
+   ============================================ */
+
+/* ---- VARIABLES ---- */
+:root {
+  --rose:       #c9859a;
+  --rose-clair: #f5dce4;
+  --rose-pale:  #fdf0f3;
+  --creme:      #fdf8f2;
+  --creme-bord: #e8ddd0;
+  --vert:       #8aaa8a;
+  --vert-clair: #e8f0e8;
+  --brun:       #5c4033;
+  --texte:      #3a2d27;
+  --texte-doux: #7a6560;
+  --blanc:      #ffffff;
+  --or:         #c8a96e;
+}
+
+/* ---- RESET & BASE ---- */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  background-color: var(--creme);
+  color: var(--texte);
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+/* ---- NAVIGATION ---- */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: rgba(253, 248, 242, 0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--creme-bord);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2.5rem;
+  height: 62px;
+}
+
+.logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 600;
+  color: var(--rose);
+  letter-spacing: 0.5px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+nav ul a {
+  font-family: 'Jost', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--texte-doux);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+nav ul a:hover,
+nav ul a.active {
+  color: var(--rose);
+}
+
+.nav-mobile-toggle {
+  display: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: var(--texte-doux);
+}
+
+/* ---- HERO ---- */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  padding: 5rem 1.5rem;
+  background:
+    linear-gradient(160deg, #f9e8ef 0%, #fdf3e8 40%, #e8f0e8 100%);
+}
+
+.hero--apropos {
+  min-height: 55vh;
+}
+
+/* Fond texture florale légère */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 20% 80%, rgba(201, 133, 154, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(138, 170, 138, 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(245, 220, 228, 0.2) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, transparent 40%, rgba(253, 240, 243, 0.4) 100%);
+  pointer-events: none;
+}
+
+/* Pétales décoratifs flottants */
+.petale {
+  position: absolute;
+  font-size: 40px;
+  color: var(--rose);
+  opacity: 0.18;
+  animation: flotter 6s ease-in-out infinite;
+  pointer-events: none;
+  user-select: none;
+}
+
+.petale-1 { top: 10%; left: 5%;  font-size: 60px; animation-delay: 0s;   animation-duration: 7s; }
+.petale-2 { top: 20%; right: 8%; font-size: 45px; animation-delay: 1s;   animation-duration: 8s; }
+.petale-3 { bottom: 20%; left: 10%; font-size: 35px; animation-delay: 2s; animation-duration: 6s; }
+.petale-4 { bottom: 30%; right: 5%; font-size: 50px; animation-delay: 0.5s; animation-duration: 9s; }
+.petale-5 { top: 50%; left: 3%;  font-size: 30px; animation-delay: 3s;   animation-duration: 7.5s; }
+
+@keyframes flotter {
+  0%, 100% { transform: translateY(0px) rotate(0deg);   opacity: 0.18; }
+  50%       { transform: translateY(-18px) rotate(6deg); opacity: 0.28; }
+}
+
+.hero-fleur {
+  position: absolute;
+  bottom: -10px;
+  right: 8%;
+  font-size: 180px;
+  color: var(--rose-clair);
+  opacity: 0.5;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 680px;
+  padding: 2rem;
+  animation: apparaitre 1s ease both;
+}
+
+@keyframes apparaitre {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.hero-eyebrow {
+  font-family: 'Jost', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--rose);
+  margin-bottom: 1rem;
+}
+
+.hero-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(40px, 7vw, 72px);
+  font-weight: 300;
+  line-height: 1.15;
+  color: var(--texte);
+  margin-bottom: 1.25rem;
+}
+
+.hero-title em {
+  color: var(--rose);
+  font-style: italic;
+}
+
+.hero-sub {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  font-weight: 300;
+  color: var(--texte-doux);
+  margin-bottom: 2rem;
+  line-height: 1.7;
+}
+
+.btn-hero {
+  display: inline-block;
+  padding: 0.75rem 2.25rem;
+  border: 1px solid var(--rose);
+  border-radius: 50px;
+  font-family: 'Jost', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--rose);
+  text-decoration: none;
+  transition: background 0.3s, color 0.3s;
+}
+
+.btn-hero:hover {
+  background-color: var(--rose);
+  color: var(--blanc);
+  text-decoration: none;
+}
+
+/* ---- HERO ENRICHI ---- */
+.hero-univers {
+  margin: 2.5rem auto 0;
+  max-width: 580px;
+  background: rgba(255,255,255,0.45);
+  border: 1px solid rgba(201,133,154,0.2);
+  border-radius: 20px;
+  padding: 2rem 2.5rem 1.75rem;
+  backdrop-filter: blur(8px);
+}
+
+.hero-univers-label {
+  font-family: 'Jost', sans-serif;
+  font-size: 10px;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  color: var(--rose);
+  margin-bottom: 1.5rem;
+}
+
+.hero-univers-liste {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.75rem;
+}
+
+.hero-univers-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.univers-icone {
+  font-size: 16px;
+}
+
+.univers-nom {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--texte);
+  letter-spacing: 0.3px;
+}
+
+.hero-univers-item--foi .univers-nom {
+  color: var(--rose);
+  font-weight: 600;
+}
+
+.univers-sep {
+  font-size: 10px;
+  color: var(--rose-clair);
+  letter-spacing: 0;
+}
+
+.hero-fleur-sep {
+  display: block;
+  font-size: 22px;
+  color: var(--rose-clair);
+  margin: 2rem 0 1.5rem;
+  animation: flotter 5s ease-in-out infinite;
+}
+
+/* ---- THÈMES ---- */
+.themes {
+  padding: 5rem 2.5rem;
+  background-color: var(--blanc);
+  text-align: center;
+}
+
+.section-label {
+  font-family: 'Jost', sans-serif;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--rose);
+  margin-bottom: 0.5rem;
+}
+
+.section-titre {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 38px;
+  font-weight: 300;
+  color: var(--texte);
+  margin-bottom: 3rem;
+  font-style: italic;
+}
+
+.themes-grille {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.theme-carte {
+  background: var(--creme);
+  border: 1px solid var(--creme-bord);
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.theme-carte:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(201, 133, 154, 0.12);
+}
+
+.theme-carte--foi {
+  background: var(--rose-pale);
+  border-color: var(--rose-clair);
+}
+
+.theme-icone {
+  font-size: 32px;
+  margin-bottom: 0.75rem;
+}
+
+.theme-carte h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--texte);
+  margin-bottom: 0.5rem;
+}
+
+.theme-carte p {
+  font-size: 15px;
+  color: var(--texte-doux);
+  line-height: 1.7;
+}
+
+/* ---- CITATION ---- */
+.citation-bloc {
+  background: linear-gradient(135deg, var(--rose-pale) 0%, var(--creme) 100%);
+  border-top: 1px solid var(--rose-clair);
+  border-bottom: 1px solid var(--rose-clair);
+  padding: 5rem 2.5rem;
+  text-align: center;
+}
+
+.citation-deco {
+  font-size: 48px;
+  color: var(--rose-clair);
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.citation-bloc blockquote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(22px, 3.5vw, 32px);
+  font-style: italic;
+  font-weight: 300;
+  color: var(--texte);
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto 1.5rem;
+}
+
+.citation-bloc cite {
+  font-family: 'Jost', sans-serif;
+  font-size: 13px;
+  color: var(--rose);
+  letter-spacing: 1px;
+  font-style: normal;
+}
+
+/* ---- CTA ---- */
+.cta {
+  background: var(--blanc);
+  padding: 5rem 2.5rem;
+  text-align: center;
+}
+
+.cta h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 36px;
+  font-weight: 300;
+  color: var(--texte);
+  margin-bottom: 0.75rem;
+  font-style: italic;
+}
+
+.cta p {
+  font-size: 16px;
+  color: var(--texte-doux);
+  margin-bottom: 2rem;
+}
+
+.btn-cta {
+  display: inline-block;
+  padding: 0.85rem 2.5rem;
+  background-color: var(--rose);
+  border-radius: 50px;
+  font-family: 'Jost', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--blanc);
+  text-decoration: none;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.btn-cta:hover {
+  background-color: var(--brun);
+  transform: scale(1.03);
+  text-decoration: none;
+}
+
+/* ---- FOOTER ---- */
+footer {
+  background-color: var(--texte);
+  padding: 3rem 2.5rem;
+  text-align: center;
+}
+
+.footer-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-style: italic;
+  color: var(--rose-clair);
+  margin-bottom: 0.5rem;
+}
+
+.footer-verse {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 15px;
+  font-style: italic;
+  color: var(--texte-doux);
+  margin-bottom: 1rem;
+}
+
+.footer-copy {
+  font-family: 'Jost', sans-serif;
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: #6a5a55;
+}
+
+/* ================================================
+   PAGE À PROPOS
+   ================================================ */
+
+.histoire {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 4rem 2rem 5rem;
+}
+
+.histoire-intro {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid var(--creme-bord);
+}
+
+.grande-lettre {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(48px, 8vw, 80px);
+  font-weight: 300;
+  color: var(--rose);
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+
+.grande-lettre span {
+  font-size: clamp(24px, 4vw, 40px);
+  font-style: italic;
+  color: var(--texte);
+}
+
+.sous-intro {
+  font-family: 'Jost', sans-serif;
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--texte-doux);
+}
+
+.histoire-corps {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.bloc-texte {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.bloc-texte p {
+  font-size: 18px;
+  font-weight: 300;
+  color: var(--texte);
+  line-height: 1.85;
+}
+
+.bloc-texte strong {
+  font-weight: 600;
+  color: var(--rose);
+}
+
+.bloc-texte em {
+  font-style: italic;
+  color: var(--texte-doux);
+}
+
+.separateur-fleur {
+  text-align: center;
+  font-size: 22px;
+  color: var(--rose-clair);
+  letter-spacing: 12px;
+  padding: 0.5rem 0;
+}
+
+/* Bloc papillon / plume */
+.bloc-papillon {
+  background: var(--rose-pale);
+  border-left: 3px solid var(--rose);
+  border-radius: 0 16px 16px 0;
+  padding: 2rem 2rem 2rem 1.5rem;
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+}
+
+.papillon-deco {
+  font-size: 40px;
+  flex-shrink: 0;
+  margin-top: 0.25rem;
+}
+
+.papillon-texte {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.papillon-texte p {
+  font-size: 17px;
+  font-weight: 300;
+  color: var(--texte);
+  line-height: 1.8;
+}
+
+.papillon-texte em {
+  font-style: italic;
+  color: var(--rose);
+  font-weight: 400;
+}
+
+/* Message fort */
+.message-fort {
+  background: linear-gradient(135deg, var(--vert-clair) 0%, var(--creme) 100%);
+  border: 1px solid var(--creme-bord);
+  border-radius: 16px;
+  padding: 2.5rem;
+  text-align: center;
+}
+
+.message-fort > p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-style: italic;
+  color: var(--texte-doux);
+  margin-bottom: 1.5rem;
+}
+
+.message-fort strong {
+  color: var(--texte);
+  font-style: normal;
+}
+
+.liste-verite {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.liste-verite li {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 19px;
+  font-weight: 400;
+  color: var(--texte);
+  letter-spacing: 0.3px;
+}
+
+/* Conclusion */
+.bloc-conclusion p {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.85;
+}
+
+.question-finale {
+  font-size: 20px !important;
+  font-style: italic;
+  color: var(--rose) !important;
+  font-weight: 400 !important;
+  margin-top: 1rem;
+}
+
+.signature {
+  margin-top: 1.5rem;
+  font-size: 22px !important;
+  text-align: right;
+  color: var(--texte) !important;
+}
+
+.signature em {
+  font-size: 28px;
+  color: var(--rose);
+  display: block;
+  font-style: italic;
+}
+
+/* ================================================
+   RESPONSIVE (mobile)
+   ================================================ */
+
+@media (max-width: 680px) {
+  nav ul { display: none; }
+  .nav-mobile-toggle { display: block; }
+
+  .hero-title { font-size: 38px; }
+  .hero-fleur  { font-size: 100px; opacity: 0.3; }
+
+  .themes-grille { grid-template-columns: 1fr; }
+
+  .histoire { padding: 2.5rem 1.25rem 4rem; }
+
+  .bloc-papillon { flex-direction: column; }
+
+  .message-fort { padding: 1.5rem; }
+}
