@@ -528,13 +528,15 @@ footer {
 }
 
 .footer-inner {
-  display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
   gap: 3rem;
   max-width: 960px;
   margin: 0 auto;
   padding-bottom: 3rem;
   border-bottom: 1px solid rgba(255,255,255,0.08);
+  flex-wrap: nowrap;
 }
 
 .footer-logo-bloc {
@@ -571,7 +573,9 @@ footer {
 }
 
 .footer-nav {
-  display: contents;
+  display: flex;
+  gap: 3rem;
+  flex-shrink: 0;
 }
 
 .footer-nav-col {
