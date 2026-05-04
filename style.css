@@ -523,27 +523,40 @@ footer {
    ================================================ */
 
 footer {
-  background: #3a2d27;
+  background: #3a2d27 !important;
   padding: 4rem 2.5rem 0;
+  color: rgba(255,255,255,0.55);
+}
+
+footer * {
+  background: transparent;
+  box-sizing: border-box;
+}
+
+footer nav,
+footer div.footer-nav {
+  background: transparent !important;
 }
 
 .footer-inner {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 3rem;
+  gap: 2rem;
   max-width: 960px;
   margin: 0 auto;
   padding-bottom: 3rem;
   border-bottom: 1px solid rgba(255,255,255,0.08);
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
 }
 
 .footer-logo-bloc {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
+  flex: 1 1 200px;
+  min-width: 180px;
 }
+
+
 
 .footer-logo {
   font-family: 'Cormorant Garamond', serif;
@@ -574,8 +587,9 @@ footer {
 
 .footer-nav {
   display: flex;
+  flex-direction: row;
   gap: 3rem;
-  flex-shrink: 0;
+  flex-wrap: wrap;
 }
 
 .footer-nav-col {
@@ -650,6 +664,7 @@ footer {
 
 .modal-overlay {
   display: none;
+  visibility: hidden;
   position: fixed;
   inset: 0;
   background: rgba(0,0,0,0.65);
@@ -662,6 +677,7 @@ footer {
 
 .modal-overlay.modal-actif {
   display: flex;
+  visibility: visible;
 }
 
 .modal-boite {
