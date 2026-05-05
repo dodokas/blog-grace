@@ -524,7 +524,7 @@ footer {
 
 footer {
   background: #3a2d27 !important;
-  padding: 4rem 2.5rem 0;
+  padding: 4rem 2.5rem 0 2.5rem;
   color: rgba(255,255,255,0.55);
 }
 
@@ -541,19 +541,18 @@ footer div.footer-nav {
 .footer-inner {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: flex-start;
-  gap: 5rem;
-  max-width: 960px;
-  margin: 0 auto;
-  padding-bottom: 3rem;
+  gap: 4rem;
+  width: 100%;
+  padding: 0 0 3rem 0;
   border-bottom: 1px solid rgba(255,255,255,0.08);
   flex-wrap: wrap;
 }
 
 .footer-logo-bloc {
-  flex: 1 1 200px;
-  min-width: 180px;
+  flex: 0 0 auto;
+  min-width: 0;
 }
 
 
@@ -589,6 +588,7 @@ footer div.footer-nav {
   display: flex;
   flex-direction: row;
   gap: 3rem;
+  flex: 0 0 auto;
   flex-wrap: wrap;
 }
 
@@ -641,8 +641,6 @@ footer div.footer-nav {
 }
 
 .footer-bas {
-  max-width: 960px;
-  margin: 0 auto;
   padding: 1.5rem 0;
   display: flex;
   align-items: center;
